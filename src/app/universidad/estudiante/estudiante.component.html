@@ -1,0 +1,20 @@
+<section>
+<div >
+ <ngx-datatable [rows]="estudiantes" rowHeight="auto"
+ class="material core-bootstrap" [limit]="10"
+ [columnMode]="ColumnMode.standard" [headerHeight]="50"
+ [footerHeight]="50" [scrollbarH]="true">
+
+ <ngx-datatable-column name="Codigo" prop="codigo" [width]="130"></ngx-datatable-column>
+ <ngx-datatable-column name="Estudiante" prop="nombre" [width]="250"></ngx-datatable-column>
+ <ngx-datatable-column name="Universidad" prop="universidad" [width]="130"></ngx-datatable-column>
+
+
+</ngx-datatable>
+</div>
+
+<div class="row">
+
+    <button class="primary" (click)= "crearEstudiante()"> Crear Estudiante</button>
+</div>
+</section>

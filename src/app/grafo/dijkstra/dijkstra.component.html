@@ -1,0 +1,113 @@
+<p>Algoritmo de Dijkstra</p>
+<p>También llamado algoritmo de caminos mínimos, es un algoritmo para la determinación
+    del camino más corto dado un vértice origen al resto de vértices en un grafo con pesos en cada arista.
+    Su nombre se refiere a Edsger Dijkstra, quien lo describió por primera vez en 1959.</p>
+<img src="assets/img/tiposdegrafos/5.png">
+
+<p>Aplicaciones</p>
+<p>En múltiples aplicaciones donde se aplican los grafos, es necesario conocer el camino de menor costo entre dos
+    vértices dados:
+
+    Distribución de productos a una red de establecimientos comerciales.
+    Distribución de correos postales.
+    Sea G = (V, A) un grafo dirigido ponderado.
+    El problema del camino más corto de un vértice a otro consiste en determinar el camino de menor costo, desde un
+    vértice u a otro vértice v. El costo de un camino es la suma de los costos (pesos) de los arcos que lo conforman.
+</p>
+
+<p>Caracteristicas del algoritmo</p>
+<p>
+    Es un algoritmo greddy.
+    Trabaja por etapas, y toma en cada etapa la mejor solución sin considerar consecuencias futuras.
+    El óptimo encontrado en una etapa puede modificarse posteriormente si surge una solución mejor.
+</p>
+
+<section>
+
+    <div class="row">
+        <input [(ngModel)]="numero"/>
+    </div>
+    
+    
+
+        
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+            <button class="primary" (click)="1">1</button>
+            <button class="primary" (click)="2">2</button>
+            <button class="primary" (click)="3">3</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+            <button class="primary" (click)="4">4</button>
+            <button class="primary" (click)="5">5</button>
+            <button class="primary" (click)="6">6</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+            <button class="primary" (click)="7">7</button>
+            <button class="primary" (click)="8">8</button>
+            <button class="primary" (click)="9">9</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+            <button class="primary" (click)="calcularSuma()">+</button>
+            <button class="primary" (click)="calcularResta">-</button>
+            <button class="primary" (click)="calcularMultiplicacion()">*</button>
+            <button class="primary" (click)="calcularDivision()">/</button>
+            <button (click)="calcular()"class="primary">Calcular</button>
+        </div>
+    </div>
+
+</section>
+
+
+<!--
+        <section>
+            <div class="row"> 
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <label>
+                        {{persona.nombre}}
+                    </label>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <label>
+                        {{persona.apellido}}
+                    </label>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+
+                    <p>
+                        Valor:{{numero}}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+
+                <button class="prima"> </button>
+            </div>
+        </section>
+        -->
+
+
+
+
+<a href="https://www.ecured.cu/Algoritmo_de_Dijkstra#:~:text=Concepto%3A,por%20primera%20vez%20en%201959."
+    target="_blank">Mas informacion sobre algoritmo de dijkstra</a>
