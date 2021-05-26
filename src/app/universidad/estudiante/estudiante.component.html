@@ -13,8 +13,129 @@
 </ngx-datatable>
 </div>
 
+<!--
 <div class="row">
 
     <button class="primary" (click)= "crearEstudiante()"> Crear Estudiante</button>
 </div>
+-->
 </section>
+
+<div class="row">
+	<div class="col-12">
+		<div class="content-header">Formulario para crear estudiante</div>
+	</div>
+</div>
+<!-- Basic Inputs start -->
+<section id="basic-input">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Crear Estudiante</h4>
+				</div>
+
+				<form [formGroup]="estudianteForm">
+				<div class="card-content">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-6">
+
+								<div class="form-group">
+									<label for="basicInput">Nombre del estudiante</label>
+									<input type="text" class="form-control" formControlName="nombreEstudiante"   placeholder="Nombre estudiante">
+								</div>
+
+								<div class="form-group">
+								
+									<label for="helpInputTop">Codigo del estudiante</label>
+									
+									<input type="text" class="form-control" formControlName="codigoEstudiante"  placeholder="Codigo estudiante">
+								</div>
+
+								<div class="form-group">
+									<label for="helperText">Universidad</label>
+									<input type="text" class="form-control"  formControlName="universidadEstudiante"   placeholder="Universidad del estudiante">
+								</div>
+								
+							</div>
+							<div class="col-md-6">						
+								<div class="form-group">
+									<label>Universidades Disponibles</label>
+									<p class="form-control-static" id="staticInput">UMANIZALES</p>
+                                    <p class="form-control-static" id="staticInput">UCATOLICA</p>
+                                    <p class="form-control-static" id="staticInput">UAUTONOMA</p>
+								</div>
+
+                                
+                                <button class="btn btn-primary" (click)="crearEstudiante()" type="submit">Crear Estudiante</button>
+                                
+                                
+							</div>
+						</div>
+					</div>
+				</div>
+			    </form>
+			</div>
+		</div>
+	</div>
+   
+    <!--
+    <div class="row">
+        <button class="primary" (click)="crearEstudiante()"> Crear Estudiante</button>
+    </div>
+-->
+    
+
+    
+</section>
+
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="content-header">Formulario para eliminar estudiante</div>
+    </div>
+</div>
+<!-- Basic Inputs start -->
+<section id="basic-input">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Eliminar estudiante </h4>
+                </div>
+
+				<form [formGroup]="estudianteForm">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+
+                                <fieldset class="form-group">
+                                    <label for="helpInputTop">Codigo del estudiante a eliminar</label>
+                                    
+                                    <input type="text" class="form-control" formControlName="codigoEstudiante" id="codigoEstudiante" placeholder="Codigo de la materia">
+                                </fieldset>
+
+                             
+
+                                <button class="btn btn-primary" (click)="eliminarEstudiante()" type="submit">Eliminar Estudiante</button>
+                            </div>
+                            
+                               
+                                
+                        </div>
+                    </div>
+                </div>
+			</form>
+            </div>
+        </div>
+    </div>
+  
+
+</section>
+

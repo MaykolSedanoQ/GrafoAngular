@@ -11,5 +11,12 @@ export const environment = {
   
   urlListarEstudiantes:`${data.urlapigrafo}/estudiante`,
   urlGuardarEstudiante:`${data.urlapigrafo}/estudiante`,
+  urlEliminarEstudiante:`${data.urlapigrafo}/estudiante`,
+  urlListarProfesores:`${data.urlapigrafo}/profesor`,
+  urlGuardarProfesores:`${data.urlapigrafo}/profesor`,
+  urlEliminarProfesores:`${data.urlapigrafo}/profesor`,
+  urlListarAsignaturas:`${data.urlapigrafo}/materias`,
+  urlCrearAsignaturas:`${data.urlapigrafo}/materias`,
+  urlEliminarAsignaturas:`${data.urlapigrafo}/materias`,
   urlAutenticar: `${data.urlapigrafo}/autenticar`
 };

@@ -1,0 +1,134 @@
+
+<section>
+    <div >
+     <ngx-datatable [rows]="profesores" rowHeight="auto"
+     class="material core-bootstrap" [limit]="10"
+     [columnMode]="ColumnMode.standard" [headerHeight]="50"
+     [footerHeight]="50" [scrollbarH]="true">
+    
+     <ngx-datatable-column name="Nombre" prop="nombre" [width]="250"></ngx-datatable-column>
+     <ngx-datatable-column name="Apellidos" prop="apellido" [width]="250"></ngx-datatable-column>
+     <ngx-datatable-column name="Codigo" prop="codigo" [width]="130"></ngx-datatable-column>
+     <ngx-datatable-column name="Codigo Asignatura" prop="codigoMateria" [width]="130"></ngx-datatable-column>
+    </ngx-datatable>
+    </div>
+    
+   
+    
+    </section>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="content-header">Formulario para crear Profesores</div>
+        </div>
+    </div>
+    <!-- Basic Inputs start -->
+    <section id="basic-input">
+    
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Crear Profesor</h4>
+                    </div>
+
+                    <form [formGroup]="profesorForm">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label for="basicInput">Nombre del profesor</label>
+                                        <input type="text" class="form-control" formControlName="nombreProfesor" id="nombreProfesor"  placeholder="Nombre profesor">
+                                    </fieldset>
+    
+                                    <fieldset class="form-group">
+                                        <label for="basicInput">Apellidos del profesor</label>
+                                        <input type="text" class="form-control" formControlName="apellidoProfesor" id="apellidoProfesor"  placeholder="Apellidos profesor">
+                                    </fieldset>
+    
+                                    <fieldset class="form-group">
+                                        <label for="helpInputTop">Codigo del Profesor</label>
+                                        
+                                        <input type="text" class="form-control" formControlName="codigoProfesor" id="codigoProfesor" placeholder="Codigo Profesor">
+                                    </fieldset>
+    
+                                    <fieldset class="form-group">
+                                        <label for="helperText">Codigo Materia</label>
+                                        <input type="text" id="codigoMateria" class="form-control" formControlName="codigoMateria" placeholder="Codigo de la materia">
+                                        
+                                    </fieldset>
+    
+                                    
+                                    <button class="btn btn-primary" (click)="crearProfesor()" type="submit">Crear Profesor</button>
+                                    
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    
+        <!--
+        <div class="row">
+            <button class="primary" (click)="crearProfesor()"> Crear Estudiante</button>
+        </div>
+        -->
+        
+    </section>
+
+
+
+
+
+
+
+    
+<div class="row">
+    <div class="col-12">
+        <div class="content-header">Formulario para eliminar profesor</div>
+    </div>
+</div>
+<!-- Basic Inputs start -->
+<section id="basic-input">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Eliminar profesor </h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+
+                                <fieldset class="form-group">
+                                    <label for="helpInputTop">Codigo del profesor a eliminar</label>
+                                    
+                                    <input type="text" class="form-control" id="codigoProfesor" placeholder="Codigo de la materia">
+                                </fieldset>
+
+                             
+
+                                <button class="btn btn-primary" (click)="eliminarProfesor()" type="submit">Eliminar profesor</button>
+                            </div>
+                            
+                               
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+</section>
+
+    
+    

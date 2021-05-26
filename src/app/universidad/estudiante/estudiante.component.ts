@@ -6,6 +6,7 @@ import {
   SelectionType
 } from '@swimlane/ngx-datatable';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -16,9 +17,18 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class EstudianteComponent implements OnInit {
 
+  estudianteFormSubmitted = false;
+
   estudiantes:[]
   reorderable: boolean = true;
   public ColumnMode = ColumnMode;
+
+  estudianteForm = new FormGroup({
+    nombreEstudiante: new FormControl('',[Validators.required]),
+    codigoEstudiante: new FormControl('',[Validators.required]),
+    universidadEstudiante: new FormControl('',[Validators.required]),
+    renemberMe: new FormControl(true)
+  })
 
   
   constructor( private universidadService:UniversidadService) { }
@@ -38,16 +48,32 @@ dataFinal=>{
    );
 }
 
-public crearEstudiante(){
-  let canion={"codigo":"82201729632","nombre":"Santiago Urrea","universidad":"UMANIZALES"}
-this.universidadService.crearEstudiante(canion).subscribe(
-  dataFinal=>{
-    console.log(dataFinal)
-  }
-)
+//public crearEstudiante(){
+  //let canion={"codigo":"82201729632","nombre":"Santiago Urrea","universidad":"UMANIZALES"}
+//this.universidadService.crearEstudiante(canion).subscribe(
+  //dataFinal=>{
+   // console.log(dataFinal)
+  //}
+//)
   
+//}
 
- 
+public crearEstudiante(){
+  this.universidadService.crearEstudiante(this.estudianteForm.value.nombreEstudiante, 
+    this.estudianteForm.value.codigoEstudiante, this.estudianteForm.value.universidadEstudiante).subscribe(
+       dataFinal=>{
+         console.log(dataFinal)
+       }
+     )
 }
+
+public eliminarEstudiante(){
+  this.universidadService.EliminarEstudiante(this.estudianteForm.value.codigoEstudiante).subscribe(
+    dataFinal=>{
+      console.log(dataFinal)
+    }
+  )
+}
+
 
 }

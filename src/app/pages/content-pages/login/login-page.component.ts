@@ -3,6 +3,8 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
 import { AuthService } from 'app/shared/auth/auth.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { switchAll } from 'rxjs/operators';
+import Swal, {SweetAlertArrayOptions}from 'sweetalert2'
 
 
 @Component({
@@ -56,12 +58,27 @@ export class LoginPageComponent {
           
           {
           this.spinner.hide();
-          this.router.navigate(['/page/dirigido']);                
+          this.router.navigate(['/grafo/dijkstra']);   
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Datos Validos',
+            showConfirmButton: false,
+            timer: 1500
+          })            
           }
           else
           {
             this.spinner.hide();
             console.log("No puede ingresar")
+
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Datos Erroneos',
+          })
+       
+            
           }
         }
       );
