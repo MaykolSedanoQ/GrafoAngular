@@ -33,8 +33,8 @@ private env: any= environment;
   }
   public crearEstudiante(nombreEstudiante: string, codigoEstudiante: string,
      universidadEstudiante: string):Observable<any>{
-       let estudiante={"nombre": nombreEstudiante, "Codigo Estudiante": codigoEstudiante,
-      "univesidad estudiante": universidadEstudiante}
+       let estudiante={"nombre": nombreEstudiante, "codigo": codigoEstudiante,
+      "universidad": universidadEstudiante}
     return this.client.post(this.env.urlGuardarEstudiante,estudiante,
       {headers: this.httpHeadersRest()}).pipe(
       map(response=>{
@@ -46,7 +46,7 @@ private env: any= environment;
   
   public EliminarEstudiante(codigoEstudiante: string):Observable<any>{
 
-    let estudiante={"codigo del estudiante a eliminar": codigoEstudiante}
+    let estudiante={"codigo": codigoEstudiante}
     return this.client.delete(this.env.urlEliminarEstudiante,
       {headers: this.httpHeadersRest()}).pipe(
        map(response=>{
@@ -70,8 +70,8 @@ private env: any= environment;
 
   public CrearProfesor(nombreProfesor: string, apellidoProfesor: string, codigoProfesor: string,
     codigoMateria: string, ):Observable<any>{
-      let profesor={"nombre": nombreProfesor, "apellido": codigoProfesor,
-    "codigo profesor": codigoProfesor, "codigo materia": codigoMateria}
+      let profesor={"nombre": nombreProfesor, "apellido": apellidoProfesor,
+    "codigo": codigoProfesor, "codigoMateria": codigoMateria}
     return this.client.post(this.env.urlGuardarProfesores,profesor,
 
       {headers: this.httpHeadersRest()}).pipe(
@@ -86,7 +86,7 @@ private env: any= environment;
 
   public EliminarProfesor(codigoProfesor: String):Observable<any>{
 
-    let profesor={"codigo del profesor a eliminar": codigoProfesor}
+    let profesor={"codigo": codigoProfesor}
     return this.client.delete(this.env.urlEliminarProfesores,
       {headers: this.httpHeadersRest()}).pipe(
        map(response=>{
@@ -110,7 +110,7 @@ private env: any= environment;
   }
 
   public CrearAsignatura(nombreAsignatura: string, codigoAsignatura: string, docenteAsignatura: string, ):Observable<any>{
-      let asignatura={"nombre": nombreAsignatura, "codigo": codigoAsignatura,
+      let asignatura={"nombreMateria": nombreAsignatura, "codigo": codigoAsignatura,
     "docente": docenteAsignatura}
     return this.client.post(this.env.urlCrearAsignaturas,asignatura,
 
@@ -124,8 +124,8 @@ private env: any= environment;
 
   public eliminarAsignatura(codigoAsignatura: String):Observable<any>{
 
-    let asignatura={"codigo de la materia a eliminar": codigoAsignatura}
-    return this.client.delete(this.env.urlEliminarAsignaturas,
+    let asignatura={"codigo": codigoAsignatura}
+    return this.client.delete(this.env.urlListarAsignaturas,
       {headers: this.httpHeadersRest()}).pipe(
        map(response=>{
         return response

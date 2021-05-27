@@ -30,26 +30,31 @@
                     <div class="card-header">
                         <h4 class="card-title">Crear Asignatura</h4>
                     </div>
+
+                    <form [formGroup]="AsignaturaForm">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <fieldset class="form-group">
                                         <label for="basicInput">Nombre de la asignatura</label>
-                                        <input type="text" class="form-control" id="nombreAsignatura"  placeholder="Nombre estudiante">
+                                        <input type="text" class="form-control" formControlName="nombreAsignatura" id="nombreAsignatura"  placeholder="Nombre Asignatra">
                                     </fieldset>
     
+
+                                    
                                     <fieldset class="form-group">
                                         <label for="helpInputTop">Codigo de la asignatura</label>
                                         
-                                        <input type="text" class="form-control" id="codigoAsignatura" placeholder="Codigo de la materia">
+                                        <input type="text" class="form-control" formControlName="codigoAsignatura" id="codigoAsignatura" placeholder="Codigo de la Asignatra">
                                     </fieldset>
     
                                     <fieldset class="form-group">
                                         <label for="helperText">Docente</label>
-                                        <input type="text" id="docenteAsignatura" class="form-control" placeholder="Docente de la materia">
+                                        <input type="text" formControlName="docenteAsignatura" id="docenteAsignatura" class="form-control" placeholder="Docente de la Asignatra">
                                         
                                     </fieldset>
+                                    
 
                                     <button class="btn btn-primary" (click)="crearAsignatura()" type="submit">Crear Asignatura</button>
                                 </div>
@@ -59,6 +64,7 @@
                             </div>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -88,6 +94,8 @@
                     <div class="card-header">
                         <h4 class="card-title">Eliminar Asignatura</h4>
                     </div>
+
+                    <form [formGroup]="AsignaturaForm">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="row">
@@ -97,7 +105,7 @@
                                     <fieldset class="form-group">
                                         <label for="helpInputTop">Codigo de la asignatura a eliminar</label>
                                         
-                                        <input type="text" class="form-control" id="codigoAsignatura" placeholder="Codigo de la materia">
+                                        <input type="text" class="form-control" formControlName="codigoAsignatura" id="codigoAsignatura" placeholder="Codigo de la Asignatra">
                                     </fieldset>
     
                                  
@@ -110,6 +118,7 @@
                             </div>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
